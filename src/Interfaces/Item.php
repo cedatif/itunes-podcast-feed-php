@@ -17,12 +17,16 @@ interface Item extends Xml
      * @param string $fileUrl
      * @param string $duration For example: 2:29
      * @param string $description
+     * @param int $episode
+     * @param int $season
+     * @param string $type
      * @param int $date Since unix epoch
      * @param int $fileSizeBytes
      * @param string $mime
      */
     public function __construct(
         string $title, string $fileUrl, string $duration, string $description,
+        int $episode, int $season, string $type,
         int $date, int $fileSizeBytes, string $mime
     );
 }

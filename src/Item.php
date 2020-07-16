@@ -32,6 +32,18 @@ class Item implements ItemInterface
      */
     private $description;
     /**
+     * @var int
+     */
+    private $episode;
+    /**
+     * @var int
+     */
+    private $season;
+    /**
+     * @var string
+     */
+    private $type;
+    /**
      * @var string
      */
     private $publishDate;
@@ -56,13 +68,17 @@ class Item implements ItemInterface
 
     public function __construct(
         string $title, string $fileUrl, string $duration,
-        string $description, int $publishDate, int $fileSizeBytes,
+        string $description, int $episode, int $season, string $type,
+        int $publishDate, int $fileSizeBytes,
         string $mime, ?string $guid = null, ?string $link = null
     ) {
         $this->title = $this->escape($title);
         $this->fileUrl = $fileUrl;
         $this->duration = $duration;
         $this->description = $this->escape($description);
+        $this->episode = $episode;
+        $this->season = $season;
+        $this->type = $this->escape($type);
         $this->publishDate = date('r', $publishDate);
         $this->fileSizeBytes = $fileSizeBytes;
         $this->mime = $mime;
